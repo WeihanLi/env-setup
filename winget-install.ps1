@@ -25,6 +25,10 @@ foreach ($app in $Apps) {
     winget install $app
 }
 
+# vscode install with context menu option
+winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
+
+
 Write-Host "Setting up Git for Windows..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 git config --global user.email "weihanli@outlook.com"
