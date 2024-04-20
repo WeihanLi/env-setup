@@ -33,7 +33,6 @@ Write-Host "Setting up Git for Windows..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 git config --global user.email "weihanli@outlook.com"
 git config --global user.name "Weihan Li"
-git config --global core.autocrlf true
 # configure git proxy to use v2ray proxy for github if necessary
 # git config --global http.https://github.com.proxy http://127.0.0.1:10809
 
