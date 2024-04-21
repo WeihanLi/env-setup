@@ -28,6 +28,16 @@ foreach ($app in $Apps) {
 # vscode install with context menu option
 winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 
+Write-Host "Setting up PowerShell profile..." -ForegroundColor Green
+$psProfile = @"
+Set-PSReadLineOption -PredictionViewStyle ListView
+
+# Custom alias
+Set-Alias -Name grep -Value Select-String
+"@
+Add-Content -Path $PROFILE -Value @psProfile
+Write-Host "PowerShell profile configured" -ForegroundColor Green
+Get-Content -Path $PROFILE
 
 Write-Host "Setting up Git for Windows..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
@@ -41,5 +51,6 @@ Write-Host "------------------------------------" -ForegroundColor Green
 [Environment]::SetEnvironmentVariable("DOTNET_PRINT_TELEMETRY_MESSAGE", "false", "Machine")
 [Environment]::SetEnvironmentVariable("DOTNET_CLI_TELEMETRY_OPTOUT", "1", "Machine")
 dotnet tool update --global dotnet-execute --prerelease
-dotnet tool update --global dotnet-ef
 dotnet tool update --global dotnet-httpie
+dotnet tool update --global dotnet-outdated-tool
+dotnet tool update --global dotnet-ef
