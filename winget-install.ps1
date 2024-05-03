@@ -28,8 +28,18 @@ foreach ($app in $Apps) {
 # vscode install with context menu option
 winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 
+# install powershell modules
+# support ConvertTo-Base64/ConvertFrom-Base64
+Install-Module Microsoft.PowerShell.TextUtility
+
 Write-Host "Setting up PowerShell profile..." -ForegroundColor Green
 $psProfile = @"
+
+# import-modules
+Import-Module Microsoft.PowerShell.TextUtility
+
+# module config
+
 Set-PSReadLineOption -PredictionViewStyle ListView
 
 # Custom alias
