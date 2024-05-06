@@ -51,8 +51,17 @@ Get-Content -Path $PROFILE
 
 Write-Host "Setting up Git for Windows..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
+# user config
 git config --global user.email "weihanli@outlook.com"
 git config --global user.name "Weihan Li"
+# alias config
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.last 'log -1 HEAD'
+# git config --global alias.unstage 'reset HEAD --'
+
 # configure git proxy to use v2ray proxy for github if necessary
 # git config --global http.https://github.com.proxy http://127.0.0.1:10809
 
