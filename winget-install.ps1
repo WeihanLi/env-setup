@@ -84,3 +84,8 @@ dotnet tool update --global dotnet-execute --prerelease
 dotnet tool update --global dotnet-httpie
 dotnet tool update --global dotnet-outdated-tool
 dotnet tool update --global dotnet-ef
+
+# openlens configure
+# install extensions, File => Extensions
+#   @alebcay/openlens-node-pod-menu
+#   @ottimis/lens-version-update
