@@ -13,7 +13,6 @@ $Apps = @(
     "Microsoft.DotNet.SDK.8",
     "Microsoft.DotNet.SDK.Preview",
     "OpenJS.NodeJS",
-    "Docker.DockerDesktop",
     "Tencent.WeChat",
     "VideoLAN.VLC",
     "Nikse.SubtitleEdit",
@@ -22,8 +21,10 @@ $Apps = @(
     "sysinternals",
     "Ollama.Ollama",
     "Alibaba.DingTalk",
-    "MuhammedKalkan.OpenLens",
-    "Helm.Helm"
+    "Docker.DockerDesktop",
+    "Kubernetes.kubectl",
+    "Helm.Helm",
+    "MuhammedKalkan.OpenLens"
 )
 
 foreach ($app in $Apps) {
