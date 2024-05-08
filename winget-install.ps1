@@ -39,9 +39,11 @@ winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runc
 # support ConvertTo-Base64/ConvertFrom-Base64
 Install-Module Microsoft.PowerShell.TextUtility
 
+# https://ohmyposh.dev/docs/installation/fonts
 # install fonts for posh
 oh-my-posh font install Hack --user
-oh-my-posh font install Meslo --user
+# posh recommended font => Meslo LGM NF
+# oh-my-posh font install Meslo --user
 
 Write-Host "Setting up PowerShell profile..." -ForegroundColor Green
 $psProfile = @"
