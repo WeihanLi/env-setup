@@ -18,17 +18,22 @@ $Apps = @(
     "VideoLAN.VLC",
     "Nikse.SubtitleEdit",
     "OBSProject.OBSStudio",
-    "Gyan.FFmpeg"
+    "Gyan.FFmpeg",
+    "sysinternals",
+    "Ollama.Ollama",
+    "Alibaba.DingTalk",
+    "MuhammedKalkan.OpenLens",
+    "Helm.Helm"
 )
 
 foreach ($app in $Apps) {
-    winget install $app
+    winget install $app --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
 }
 
 # vscode install with context menu option
 winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
 
-# install powershell modules
+# install PowerShell modules
 # support ConvertTo-Base64/ConvertFrom-Base64
 Install-Module Microsoft.PowerShell.TextUtility
 
