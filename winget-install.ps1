@@ -76,6 +76,7 @@ git config --global alias.br "branch --format='%(HEAD) %(color:yellow)%(refname:
 git config --global alias.c "commit"
 git config --global alias.cm "commit -m"
 git config --global alias.cam "commit -am"
+git config --global alias.pnv "push --no-verify"
 git config --global alias.m "merge"
 git config --global alias.s "status -s"
 git config --global alias.st "status"
