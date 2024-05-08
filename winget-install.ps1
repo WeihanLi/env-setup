@@ -6,6 +6,7 @@ $Apps = @(
     "Git.Git", 
     "TortoiseGit.TortoiseGit",
     "Microsoft.PowerShell",
+    "JanDeDobbeleer.OhMyPosh",
     "7zip.7zip",
     "agalwood.Motrix",
     "appmakes.Typora",
@@ -38,8 +39,16 @@ winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runc
 # support ConvertTo-Base64/ConvertFrom-Base64
 Install-Module Microsoft.PowerShell.TextUtility
 
+# install fonts for posh
+oh-my-posh font install Hack --user
+oh-my-posh font install Meslo --user
+
 Write-Host "Setting up PowerShell profile..." -ForegroundColor Green
 $psProfile = @"
+# pre-configure
+[Console]::OutputEncoding = [Text.Encoding]::UTF8
+# oh-my-posh
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
 
 # import-modules
 Import-Module Microsoft.PowerShell.TextUtility
@@ -89,3 +98,6 @@ dotnet tool update --global dotnet-ef
 # install extensions, File => Extensions
 #   @alebcay/openlens-node-pod-menu
 #   @ottimis/lens-version-update
+
+# install fonts
+# JetBrains Mono # https://github.com/JetBrains/JetBrainsMono/releases
