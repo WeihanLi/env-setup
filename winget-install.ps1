@@ -1,6 +1,8 @@
 # use winget mirror if necessary
 # winget source remove winget
 # winget source add winget https://mirrors.ustc.edu.cn/winget-source
+# reset source
+# winget source reset --force
 
 $Apps = @(
     "Git.Git", 
