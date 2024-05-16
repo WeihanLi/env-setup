@@ -37,25 +37,25 @@ Write-Host "------------------------------------" -ForegroundColor Green
 Powercfg /Change monitor-timeout-ac 20
 Powercfg /Change standby-timeout-ac 0
 
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Add 'This PC' Desktop Icon..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-$thisPCIconRegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
-$thisPCRegValname = "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
-$item = Get-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -ErrorAction SilentlyContinue
-if ($item) {
-    Set-ItemProperty  -Path $thisPCIconRegPath -name $thisPCRegValname -Value 0
-}
-else {
-    New-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -Value 0 -PropertyType DWORD | Out-Null
-}
+# # -----------------------------------------------------------------------------
+# Write-Host ""
+# Write-Host "Add 'This PC' Desktop Icon..." -ForegroundColor Green
+# Write-Host "------------------------------------" -ForegroundColor Green
+# $thisPCIconRegPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel"
+# $thisPCRegValname = "{20D04FE0-3AEA-1069-A2D8-08002B30309D}"
+# $item = Get-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -ErrorAction SilentlyContinue
+# if ($item) {
+#     Set-ItemProperty  -Path $thisPCIconRegPath -name $thisPCRegValname -Value 0
+# }
+# else {
+#     New-ItemProperty -Path $thisPCIconRegPath -Name $thisPCRegValname -Value 0 -PropertyType DWORD | Out-Null
+# }
 
-# -----------------------------------------------------------------------------
-Write-Host ""
-Write-Host "Enable Windows 11 Developer Mode..." -ForegroundColor Green
-Write-Host "------------------------------------" -ForegroundColor Green
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+# # -----------------------------------------------------------------------------
+# Write-Host ""
+# Write-Host "Enable Windows 11 Developer Mode..." -ForegroundColor Green
+# Write-Host "------------------------------------" -ForegroundColor Green
+# reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
 
 # # -----------------------------------------------------------------------------
 # Write-Host ""
@@ -87,13 +87,13 @@ cmd.exe /c "reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Adva
 # Write-Host "------------------------------------" -ForegroundColor Green
 # cmd.exe /c "reg add `"HKCU\Control Panel\Bluetooth`" /v `"Notification Area Icon`" /t REG_DWORD /d 0 /f"
 
-# # -----------------------------------------------------------------------------
-# Write-Host ""
-# Write-Host "Checking Windows updates..." -ForegroundColor Green
-# Write-Host "------------------------------------" -ForegroundColor Green
-# Install-Module -Name PSWindowsUpdate -Force
-# Write-Host "Installing updates... (Computer will reboot in minutes...)" -ForegroundColor Green
-# Get-WindowsUpdate -AcceptAll -Install -ForceInstall -AutoReboot
+# -----------------------------------------------------------------------------
+Write-Host ""
+Write-Host "Checking Windows updates..." -ForegroundColor Green
+Write-Host "------------------------------------" -ForegroundColor Green
+Install-Module -Name PSWindowsUpdate -Force
+Write-Host "Installing updates... (Computer will reboot in minutes...)" -ForegroundColor Green
+Get-WindowsUpdate -AcceptAll -Install -ForceInstall -AutoReboot
 
 AddToPath("C:\\bin")
 
