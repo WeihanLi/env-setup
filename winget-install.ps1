@@ -1,6 +1,8 @@
 # use winget mirror if necessary
 # winget source remove winget
 # winget source add winget https://mirrors.ustc.edu.cn/winget-source
+# reset source
+# winget source reset --force
 
 $Apps = @(
     "Git.Git", 
@@ -60,7 +62,11 @@ Import-Module Microsoft.PowerShell.TextUtility
 Set-PSReadLineOption -PredictionViewStyle ListView
 
 # Custom alias
+Set-Alias -Name d -Value dotnet
+Set-Alias -Name g -Value git
+Set-Alias -Name k -Value kubectl
 Set-Alias -Name grep -Value Select-String
+
 "@
 Add-Content -Path $PROFILE -Value @psProfile
 Write-Host "PowerShell profile configured" -ForegroundColor Green
