@@ -1,6 +1,8 @@
 [user]
 	name = Weihan Li
 	email = weihanli@outlook.com
+# [http "https://github.com"]
+# 	proxy = http://127.0.0.1:10809
 [alias]
 	a = add
 	aa = add -A .

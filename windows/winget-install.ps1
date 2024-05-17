@@ -51,10 +51,12 @@ Write-Host "Setting up PowerShell profile..." -ForegroundColor Green
 $psProfile = @"
 # pre-configure
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
+
 # oh-my-posh
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
 
 # import-modules
+# support ConvertTo-Base64
 Import-Module Microsoft.PowerShell.TextUtility
 
 # module config
@@ -79,3 +81,6 @@ Get-Content -Path $PROFILE
 
 # install fonts
 # JetBrains Mono # https://github.com/JetBrains/JetBrainsMono/releases
+
+Write-Output "Git config"
+Copy-Item ../shared/.gitconfig ~/.gitconfig
