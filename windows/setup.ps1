@@ -95,6 +95,11 @@ Install-Module -Name PSWindowsUpdate -Force
 Write-Host "Installing updates... (Computer will reboot in minutes...)" -ForegroundColor Green
 Get-WindowsUpdate -AcceptAll -Install -ForceInstall -AutoReboot
 
+& .\windows-defender-configure.ps1
+& .\remove-uwp-rubbish.ps1
+& .\winget-install.ps1
+& .\dotnet-configure.ps1
+
 AddToPath("C:\\bin")
 
 # -----------------------------------------------------------------------------
