@@ -1,0 +1,33 @@
+{
+    "apps": [
+        "Git.Git", 
+        "TortoiseGit.TortoiseGit",
+        "Microsoft.PowerShell",
+        "JanDeDobbeleer.OhMyPosh",
+        "7zip.7zip",
+        "agalwood.Motrix",
+        "appmakes.Typora",
+        "Google.Chrome.EXE",
+        "Microsoft.DotNet.SDK.8",
+        "Microsoft.DotNet.SDK.Preview",
+        "OpenJS.NodeJS",
+        "Tencent.WeChat",
+        "VideoLAN.VLC",
+        "Nikse.SubtitleEdit",
+        "OBSProject.OBSStudio",
+        "Gyan.FFmpeg",
+        "sysinternals",
+        "Ollama.Ollama",
+        "Alibaba.DingTalk",
+        "Docker.DockerDesktop",
+        "Kubernetes.kubectl",
+        "Helm.Helm",
+        "MuhammedKalkan.OpenLens"
+    ],
+    "appsWithOverride": [
+        {
+            "id": "Microsoft.VisualStudioCode",
+            "override": "/SILENT /mergetasks=\"!runcode,addcontextmenufiles,addcontextmenufolders\""
+        }
+    ]
+}

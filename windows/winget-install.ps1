@@ -4,38 +4,24 @@
 # reset source
 # winget source reset --force
 
-$Apps = @(
-    "Git.Git", 
-    "TortoiseGit.TortoiseGit",
-    "Microsoft.PowerShell",
-    "JanDeDobbeleer.OhMyPosh",
-    "7zip.7zip",
-    "agalwood.Motrix",
-    "appmakes.Typora",
-    "Google.Chrome.EXE",
-    "Microsoft.DotNet.SDK.8",
-    "Microsoft.DotNet.SDK.Preview",
-    "OpenJS.NodeJS",
-    "Tencent.WeChat",
-    "VideoLAN.VLC",
-    "Nikse.SubtitleEdit",
-    "OBSProject.OBSStudio",
-    "Gyan.FFmpeg",
-    "sysinternals",
-    "Ollama.Ollama",
-    "Alibaba.DingTalk",
-    "Docker.DockerDesktop",
-    "Kubernetes.kubectl",
-    "Helm.Helm",
-    "MuhammedKalkan.OpenLens"
-)
+$wingetPackagesJson = Get-Content .\winget-packages.json
+$wingetPackages = $wingetPackagesJson | ConvertFrom-Json
 
-foreach ($app in $Apps) {
+$apps = $wingetPackages.apps
+
+foreach ($app in $apps) {
+    Write-Output "winget install $app"
     winget install $app --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
 }
 
-# vscode install with context menu option
-winget install Microsoft.VisualStudioCode --override '/SILENT /mergetasks="!runcode,addcontextmenufiles,addcontextmenufolders"'
+$appsWithOverride = $wingetPackages.appsWithOverride
+
+foreach ($app in $appsWithOverride) {
+    $appId = $app.id
+    $appOverride = $app.override
+    Write-Output "winget install $appId --override '$appOverride'"
+    winget install $appId --override '$appOverride'
+}
 
 # install PowerShell modules
 # support ConvertTo-Base64/ConvertFrom-Base64
@@ -48,28 +34,7 @@ oh-my-posh font install Hack --user
 # oh-my-posh font install Meslo --user
 
 Write-Host "Setting up PowerShell profile..." -ForegroundColor Green
-$psProfile = @"
-# pre-configure
-[Console]::OutputEncoding = [Text.Encoding]::UTF8
-
-# oh-my-posh
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
-
-# import-modules
-# support ConvertTo-Base64
-Import-Module Microsoft.PowerShell.TextUtility
-
-# module config
-
-Set-PSReadLineOption -PredictionViewStyle ListView
-
-# Custom alias
-Set-Alias -Name d -Value dotnet
-Set-Alias -Name g -Value git
-Set-Alias -Name k -Value kubectl
-Set-Alias -Name grep -Value Select-String
-
-"@
+$psProfile = Get-Content ..\shared\pwsh-profile.ps1
 Add-Content -Path $PROFILE -Value @psProfile
 Write-Host "PowerShell profile configured" -ForegroundColor Green
 Get-Content -Path $PROFILE
