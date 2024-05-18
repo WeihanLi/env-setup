@@ -20,7 +20,7 @@ foreach ($app in $appsWithOverride) {
     $appId = $app.id
     $appOverride = $app.override
     Write-Output "winget install $appId --override '$appOverride'"
-    winget install $appId --override '$appOverride'
+    winget install $appId --override '$appOverride' --accept-package-agreements --accept-source-agreements --silent --disable-interactivity
 }
 
 # install PowerShell modules
