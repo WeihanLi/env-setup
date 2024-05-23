@@ -18,7 +18,7 @@
 	m = merge
 	main = !git checkout main && git pull origin 
 	master = !git checkout master && git pull origin
-	stage = !git checkout master && git pull origin
+	stage = !git checkout stage && git pull origin
 	st = status
 	la = !git config -l | grep alias | cut -c 7-
 	last = log -1 HEAD
