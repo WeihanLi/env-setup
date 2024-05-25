@@ -21,7 +21,7 @@ function AddToPath {
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 }
 
-Write-Output "Current script directory: $PSScriptRoot"
+Write-Host "Current script full path: $PSCommandPath dir: $PSScriptRoot"
 
 Write-Host "OS Info:" -ForegroundColor Green
 Get-CimInstance Win32_OperatingSystem | Format-List Name, Version, InstallDate, OSArchitecture
