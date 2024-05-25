@@ -1,0 +1,10 @@
+{
+    "tools": [
+        "dotnet-execute",
+        "dotnet-httpie",
+        "dotnet-counters",
+        "dotnet-ef",
+        "dotnet-outdated-tool",
+        "dotnet-update-all-tools"
+    ]
+}
