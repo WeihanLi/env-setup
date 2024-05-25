@@ -4,7 +4,7 @@
 # reset source
 # winget source reset --force
 
-$wingetPackagesJson = Get-Content .\winget-packages.json
+$wingetPackagesJson = Get-Content $PSScriptRoot\winget-packages.json
 $wingetPackages = $wingetPackagesJson | ConvertFrom-Json
 
 $apps = $wingetPackages.apps
