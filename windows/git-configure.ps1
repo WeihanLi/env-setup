@@ -1,5 +1,8 @@
 Write-Host "Setting up Git ..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
+# lfs
+git lfs install
+
 # user config
 git config --global user.name "Weihan Li"
 git config --global user.email "weihanli@outlook.com"
