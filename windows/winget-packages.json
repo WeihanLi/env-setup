@@ -22,7 +22,8 @@
         "Docker.DockerDesktop",
         "Kubernetes.kubectl",
         "Helm.Helm",
-        "MuhammedKalkan.OpenLens"
+        "MuhammedKalkan.OpenLens",
+        "dnSpyEx.dnSpy"
     ],
     "appsWithOverride": [
         {
