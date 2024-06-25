@@ -24,3 +24,7 @@
 	last = log -1 HEAD
 [push]
 	autoSetupRemote = true
+
+# https://dev.to/equiman/how-to-use-multiple-users-with-git-2e9l
+[includeIf "gitdir/i:C:/projects/work/"]
+    path = ~/work.gitconfig
