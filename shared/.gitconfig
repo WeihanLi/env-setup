@@ -3,6 +3,14 @@
 	email = weihanli@outlook.com
 # [http "https://github.com"]
 # 	proxy = http://127.0.0.1:10809
+
+[core]
+        editor = true
+        ignorecase = false
+
+[push]
+        autoSetupRemote = true
+
 [alias]
 	a = add
 	aa = add -A .
@@ -22,8 +30,6 @@
 	st = status
 	la = !git config -l | grep alias | cut -c 7-
 	last = log -1 HEAD
-[push]
-	autoSetupRemote = true
 
 # https://dev.to/equiman/how-to-use-multiple-users-with-git-2e9l
 [includeIf "gitdir/i:C:/projects/work/"]
