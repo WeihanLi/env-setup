@@ -30,6 +30,7 @@
 	st = status
 	la = !git config -l | grep alias | cut -c 7-
 	last = log -1 HEAD
+	pullr = pull --rebase
 
 # https://dev.to/equiman/how-to-use-multiple-users-with-git-2e9l
 [includeIf "gitdir/i:C:/projects/work/"]
