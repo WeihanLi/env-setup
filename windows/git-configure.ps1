@@ -1,7 +1,7 @@
 Write-Host "Setting up Git ..." -ForegroundColor Green
 Write-Host "------------------------------------" -ForegroundColor Green
 # lfs
-git lfs install
+# git lfs install
 
 # user config
 git config --global user.name "Weihan Li"
@@ -18,7 +18,8 @@ git config --global alias.m "merge"
 git config --global alias.s "status -s"
 git config --global alias.st "status"
 git config --global alias.la "!git config -l | grep alias | cut -c 7-"
-git config --global alias.last 'log -1 HEAD'
+git config --global alias.last "log -1 HEAD"
+git config --global alias.pullr 'pull --rebase'
 
 # configure git proxy to use v2ray proxy for github if necessary
 # git config --global http.https://github.com.proxy http://127.0.0.1:10809
