@@ -15,3 +15,10 @@ brew install git
 
 echo "Git config"
 cp ../shared/.gitconfig ~/.gitconfig
+
+echo "Install nodejs"
+brew install node
+# https://yarnpkg.com/getting-started/install
+# install yarn
+# yarn set version stable
+# yarn install
