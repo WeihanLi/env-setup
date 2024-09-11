@@ -1,3 +1,4 @@
-d = dotnet
-g = git
-k = kubectl
+alias,command
+d,dotnet
+g,git
+k,kubectl
