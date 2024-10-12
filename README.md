@@ -14,7 +14,7 @@ windows\setup.ps1
 macos/setup.sh
 ```
 
-## Linux
+### Linux
 
 ```sh
 linux/setup.sh
