@@ -1,6 +1,6 @@
-# New machine setup
+# New Machine Setup
 
-## Personal Dev setup
+## Personal Dev Setup
 
 ### Windows
 
@@ -14,8 +14,14 @@ windows\setup.ps1
 macos/setup.sh
 ```
 
-## Linux server setup
+## Linux
 
 ```sh
 linux/setup.sh
 ```
+
+## Server Setup
+
+### Linux - Ubuntu
+
+### Linux - Centos
