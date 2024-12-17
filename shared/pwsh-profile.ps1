@@ -3,9 +3,10 @@
 
 # homebrew
 # $(/opt/homebrew/bin/brew shellenv) | Invoke-Expression
+# oh-my-posh init pwsh --config /opt/homebrew/opt/oh-my-posh/themes/cloud-native-azure.omp.json | Invoke-Expression
 
 # oh-my-posh
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/cloud-native-azure.omp.json" | Invoke-Expression
 
 # import-modules
 # support ConvertTo-Base64
