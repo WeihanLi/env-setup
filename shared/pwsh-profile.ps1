@@ -1,6 +1,9 @@
 # pre-configure
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 
+# homebrew
+# $(/opt/homebrew/bin/brew shellenv) | Invoke-Expression
+
 # oh-my-posh
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/atomic.omp.json" | Invoke-Expression
 
