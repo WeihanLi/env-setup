@@ -36,3 +36,7 @@
 # https://dev.to/equiman/how-to-use-multiple-users-with-git-2e9l
 [includeIf "gitdir/i:C:/projects/work/"]
     path = ~/work.gitconfig
+
+[includeIf "gitdir/i:/Users/weihan.li/sources"]
+    path = ~/personal.gitconfig
+
