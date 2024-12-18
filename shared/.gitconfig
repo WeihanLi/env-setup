@@ -37,6 +37,8 @@
 [includeIf "gitdir/i:C:/projects/work/"]
     path = ~/work.gitconfig
 
-[includeIf "gitdir/i:/Users/weihan.li/sources"]
+[includeIf "gitdir/i:~/sources/"]
     path = ~/personal.gitconfig
 
+[includeIf "gitdir/i:~/company/"]
+    path = ~/company.gitconfig
