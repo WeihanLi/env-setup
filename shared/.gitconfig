@@ -32,7 +32,7 @@
 	last = log -1 HEAD
 	pullr = pull --rebase
 	sync = "!git pull --rebase && git push"
-        cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|main\\|dev' | xargs -n 1 -r git branch -d"
+	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|main\\|dev' | xargs -n 1 -r git branch -d"
 
 # https://dev.to/equiman/how-to-use-multiple-users-with-git-2e9l
 [includeIf "gitdir/i:C:/projects/work/"]
