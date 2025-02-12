@@ -19,6 +19,11 @@ cp ../shared/.gitconfig ~/.gitconfig
 echo "Install nodejs"
 brew install node
 
+echo "Install dotnet"
+brew install --cask dotnet@8
+brew install --cask dotnet-sdk
+# brew install --cask dotnet-sdk@preview
+
 # https://docs.lextudio.com/blog/powershell-on-macos/
 echo "Install powershell"
 brew install --cask powershell
