@@ -25,7 +25,7 @@ brew install --cask dotnet-sdk
 
 # https://github.com/isen-ng/homebrew-dotnet-sdk-versions
 brew tap isen-ng/dotnet-sdk-versions
-brew install --cask dotnet-sdk-8
+brew install --cask dotnet-sdk8
 
 # https://docs.lextudio.com/blog/powershell-on-macos/
 echo "Install powershell"
