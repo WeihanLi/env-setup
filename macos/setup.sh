@@ -20,9 +20,12 @@ echo "Install nodejs"
 brew install node
 
 echo "Install dotnet"
-brew install --cask dotnet@8
 brew install --cask dotnet-sdk
 # brew install --cask dotnet-sdk@preview
+
+# https://github.com/isen-ng/homebrew-dotnet-sdk-versions
+brew tap isen-ng/dotnet-sdk-versions
+brew install --cask dotnet-sdk-8
 
 # https://docs.lextudio.com/blog/powershell-on-macos/
 echo "Install powershell"
