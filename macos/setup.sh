@@ -31,8 +31,8 @@ brew install --cask dotnet-sdk8
 echo "Install powershell"
 brew install --cask powershell
 
-echo "Install iterm2"
-brew install --cask iterm2
+echo "Install ghostty terminal"
+brew install --cask ghostty
 
 echo "Install oh-my-posh"
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
