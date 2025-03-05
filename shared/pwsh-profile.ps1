@@ -1,6 +1,9 @@
 # pre-configure
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 
+# load paths 
+# [System.IO.File]::ReadAllLines("/etc/paths") | ForEach-Object { $env:PATH += ":$_" }
+
 # homebrew
 # $(/opt/homebrew/bin/brew shellenv) | Invoke-Expression
 # oh-my-posh init pwsh --config /opt/homebrew/opt/oh-my-posh/themes/cloud-native-azure.omp.json | Invoke-Expression
