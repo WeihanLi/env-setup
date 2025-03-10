@@ -1,3 +1,9 @@
+# Instal win-get if not installed
+# Install-Script winget-install -Force
+# winget-install
+## Install WindowsTerminal
+# winget install --id Microsoft.WindowsTerminal -e
+
 # use winget mirror if necessary
 # winget source remove winget
 # winget source add winget https://mirrors.ustc.edu.cn/winget-source
