@@ -27,6 +27,9 @@ brew install --cask dotnet-sdk
 brew tap isen-ng/dotnet-sdk-versions
 brew install --cask dotnet-sdk8
 
+# freelens, k8s ui
+brew install --cask freelens
+
 # https://docs.lextudio.com/blog/powershell-on-macos/
 echo "Install powershell"
 brew install --cask powershell
