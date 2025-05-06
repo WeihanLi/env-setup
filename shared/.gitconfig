@@ -11,6 +11,9 @@
 [push]
         autoSetupRemote = true
 
+[credential]
+    helper = manager # this is required to use Git Credential Manager
+
 [alias]
 	a = add
 	aa = add -A .
